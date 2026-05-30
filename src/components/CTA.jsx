@@ -51,7 +51,7 @@ export default function CTA() {
           {/* Main download button */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <a
-              href="/ecofood.apk"
+              href={`${import.meta.env.BASE_URL}ecofood.apk`}
               download
               className="inline-flex items-center gap-3 bg-[#2ECC71] hover:bg-[#27b863] text-white font-bold px-8 py-4 rounded-2xl transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_12px_40px_rgba(46,204,113,0.45)] shadow-[0_6px_24px_rgba(46,204,113,0.35)] text-base"
             >

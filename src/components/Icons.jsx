@@ -304,7 +304,7 @@ export const IconPlay = (p) => (
 export function Logo({ variant = 'branca', className = 'h-8 w-auto' }) {
   return (
     <img
-      src={`/assets/logo_${variant}.png`}
+      src={`${import.meta.env.BASE_URL}assets/logo_${variant}.png`}
       alt="EcoFood"
       className={className}
       draggable={false}

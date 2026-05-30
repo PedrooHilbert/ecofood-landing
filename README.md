@@ -1,5 +1,7 @@
 # 🌱 EcoFood — Landing Page
 
+🔗 **Site no ar:** https://pedroohilbert.github.io/ecofood-landing/
+
 Landing page institucional do **EcoFood**, aplicativo que conecta restaurantes e
 consumidores para combater o desperdício de alimentos: refeições excedentes com
 até **70% de desconto**, com impacto real no planeta.
@@ -48,7 +50,10 @@ npm run dev
 
 ## 🎤 Como apresentar
 
-Não precisa estar hospedado na internet — basta rodar localmente na sua máquina.
+**Opção mais fácil:** o site já está no ar — basta abrir o link
+👉 **https://pedroohilbert.github.io/ecofood-landing/**
+
+Ou, se preferir rodar localmente na sua máquina (sem depender da internet):
 
 **Opção 1 — Versão de produção** (recomendada para apresentar)
 ```bash
@@ -78,6 +83,20 @@ npm run build
 Os arquivos finais ficam em `dist/`. Como o projeto usa `base: './'`, a pasta
 `dist/` pode ser servida a partir de qualquer caminho (raiz ou subpasta) — basta
 servi-la com `npm run preview` ou hospedá-la em qualquer servidor estático.
+
+---
+
+## 🚀 Publicar / atualizar o site no ar (GitHub Pages)
+
+O site é hospedado gratuitamente no **GitHub Pages**. Para republicar depois de
+qualquer alteração, basta um comando:
+
+```bash
+npm run deploy
+```
+
+Isso gera o build e envia para a branch `gh-pages` automaticamente. Em ~1 min a
+versão nova já está no ar em https://pedroohilbert.github.io/ecofood-landing/
 
 ---
 
