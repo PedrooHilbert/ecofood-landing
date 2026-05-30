@@ -47,7 +47,7 @@ const cards = [
 
 export default function Solution() {
   return (
-    <section id="solução" className="py-32 bg-[#F9FBF8] relative overflow-hidden">
+    <section id="solução" className="py-20 lg:py-32 bg-[#F9FBF8] relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-[600px] h-[500px] bg-green-100/60 blur-[160px] rounded-full" />
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50 blur-[120px] rounded-full" />
@@ -59,16 +59,16 @@ export default function Solution() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          className="text-center mb-12 lg:mb-20"
         >
           <span className="inline-block text-green-700 text-xs font-bold uppercase tracking-[0.25em] mb-5 bg-green-50 border border-green-100 px-4 py-1.5 rounded-full">A Solução</span>
-          <h2 className="text-5xl lg:text-6xl font-black tracking-tight mb-6 text-gray-900 leading-[1.05]">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-gray-900 leading-[1.05]">
             Uma plataforma,{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2ECC71] to-emerald-500">
               três impactos
             </span>
           </h2>
-          <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
             EcoFood cria um ecossistema onde restaurantes, consumidores e o meio ambiente saem ganhando.
           </p>
         </motion.div>

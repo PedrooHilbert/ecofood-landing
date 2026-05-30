@@ -16,7 +16,7 @@ const highlights = [
 
 export default function CTA() {
   return (
-    <section id="download" className="py-32 relative overflow-hidden bg-[#F0FDF4]">
+    <section id="download" className="py-20 lg:py-32 relative overflow-hidden bg-[#F0FDF4]">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #bbf7d0 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.6 }} />
@@ -37,7 +37,7 @@ export default function CTA() {
             Disponível para Android
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-black tracking-tight mb-5 leading-[1.05] text-gray-900">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-5 leading-[1.05] text-gray-900">
             Baixe agora e comece{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2ECC71] via-emerald-500 to-green-400">
               a economizar

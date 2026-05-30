@@ -18,7 +18,7 @@ const item = {
 function FloatingBadge({ className, delay, children }) {
   return (
     <motion.div
-      className={`absolute bg-white border border-gray-100 rounded-2xl px-3 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.05)] ${className}`}
+      className={`absolute hidden lg:block bg-white border border-gray-100 rounded-2xl px-3 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.05)] ${className}`}
       initial={{ opacity: 0, scale: 0.85 }}
       animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
       transition={{
@@ -269,7 +269,7 @@ export default function Hero() {
         <div className="absolute top-1/3 right-0 w-64 h-64 bg-emerald-50 blur-[100px] rounded-full" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-16 xl:gap-24 items-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-16 grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center w-full">
         {/* Left */}
         <motion.div
           variants={container}
@@ -285,7 +285,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1 variants={item} className="text-6xl lg:text-[5rem] xl:text-[5.5rem] font-black leading-[1.0] tracking-tight mb-7 text-gray-900">
+          <motion.h1 variants={item} className="text-[2rem] sm:text-5xl lg:text-[5rem] xl:text-[5.5rem] font-black leading-[1.12] lg:leading-[1.0] tracking-tight mb-6 lg:mb-7 text-gray-900">
             Menos<br />
             desperdício,{' '}
             <span className="relative inline-block">
@@ -345,7 +345,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ y: phoneY }}
-          className="flex justify-center items-center relative min-h-[560px]"
+          className="flex justify-center items-center relative min-h-[480px] lg:min-h-[560px]"
         >
           <PhoneMockup />
         </motion.div>

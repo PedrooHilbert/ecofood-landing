@@ -59,7 +59,7 @@ export default function HowItWorks() {
   const lineWidth = useTransform(scrollYProgress, [0.1, 0.9], ['0%', '100%'])
 
   return (
-    <section id="como-funciona" ref={ref} className="py-32 bg-white relative overflow-hidden">
+    <section id="como-funciona" ref={ref} className="py-20 lg:py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #d1fae5 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.5 }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -68,16 +68,16 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          className="text-center mb-12 lg:mb-20"
         >
           <span className="inline-block text-green-700 text-xs font-bold uppercase tracking-[0.25em] mb-5 bg-green-50 border border-green-100 px-4 py-1.5 rounded-full">Como Funciona</span>
-          <h2 className="text-5xl lg:text-6xl font-black tracking-tight mb-6 text-gray-900 leading-[1.05]">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-gray-900 leading-[1.05]">
             Simples como pedir{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2ECC71] to-emerald-500">
               uma pizza
             </span>
           </h2>
-          <p className="text-gray-400 text-xl max-w-xl mx-auto">
+          <p className="text-gray-400 text-lg sm:text-xl max-w-xl mx-auto">
             Da publicação ao prato na mão em menos de 5 minutos.
           </p>
         </motion.div>
@@ -149,10 +149,10 @@ export default function HowItWorks() {
               <p className="text-gray-400 text-sm mt-0.5">Do registro à retirada, tudo em minutos.</p>
             </div>
           </div>
-          <div className="flex items-center gap-10 flex-shrink-0">
+          <div className="flex items-center justify-center flex-wrap gap-6 sm:gap-8 lg:gap-10 flex-shrink-0">
             {[['< 1 min', 'Publicar oferta'], ['< 30 seg', 'Reservar & pagar'], ['0 min', 'Sem filas']].map(([t, l]) => (
               <div key={l} className="text-center">
-                <p className="text-[#2ECC71] font-black text-2xl leading-none">{t}</p>
+                <p className="text-[#2ECC71] font-black text-xl sm:text-2xl leading-none">{t}</p>
                 <p className="text-gray-400 text-xs mt-1">{l}</p>
               </div>
             ))}

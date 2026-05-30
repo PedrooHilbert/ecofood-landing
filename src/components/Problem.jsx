@@ -81,7 +81,7 @@ const stats = [
 
 export default function Problem() {
   return (
-    <section id="problema" className="py-32 bg-white relative overflow-hidden">
+    <section id="problema" className="py-20 lg:py-32 bg-white relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #f3f4f6 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -90,17 +90,17 @@ export default function Problem() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          className="text-center mb-12 lg:mb-20"
         >
           <span className="inline-block text-red-500 text-xs font-bold uppercase tracking-[0.25em] mb-5 bg-red-50 border border-red-100 px-4 py-1.5 rounded-full">O Problema</span>
-          <h2 className="text-5xl lg:text-6xl font-black tracking-tight mb-6 text-gray-900 leading-[1.05]">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-gray-900 leading-[1.05]">
             Uma crise{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
               silenciosa
             </span>
             {' '}no prato
           </h2>
-          <p className="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
             Enquanto 828 milhões de pessoas passam fome, toneladas de alimentos perfeitos são descartadas todos os dias.
           </p>
         </motion.div>
