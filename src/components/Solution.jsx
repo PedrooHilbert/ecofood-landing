@@ -49,8 +49,8 @@ export default function Solution() {
   return (
     <section id="solução" className="py-20 lg:py-32 bg-[#F9FBF8] relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[500px] bg-green-100/60 blur-[160px] rounded-full" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-50 blur-[120px] rounded-full" />
+        <div className="absolute hidden lg:block bottom-0 left-1/4 w-[600px] h-[500px] bg-green-100/60 blur-[160px] rounded-full" />
+        <div className="absolute hidden lg:block top-0 right-0 w-[400px] h-[400px] bg-blue-50 blur-[120px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">

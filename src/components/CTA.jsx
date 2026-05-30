@@ -20,7 +20,7 @@ export default function CTA() {
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #bbf7d0 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.6 }} />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-green-200/40 blur-[160px] rounded-full" />
+        <div className="absolute hidden lg:block top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-green-200/40 blur-[160px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">

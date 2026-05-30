@@ -62,7 +62,7 @@ export default function Technology() {
     <section id="tecnologia" className="py-20 lg:py-28 bg-white relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #e5e7eb 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.45 }} />
-        <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-purple-50 blur-[120px] rounded-full" />
+        <div className="absolute hidden lg:block top-0 right-1/4 w-[400px] h-[400px] bg-purple-50 blur-[120px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">

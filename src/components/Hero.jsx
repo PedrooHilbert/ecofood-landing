@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
 import {
   IconSearch, IconStar, IconHeart, IconBell, IconHome, IconBag, IconUser,
@@ -180,9 +180,9 @@ function PhoneMockup() {
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
         className="relative w-full h-full"
       >
-        {/* Glow beneath phone */}
-        <div className="absolute inset-x-4 -bottom-6 h-20 bg-green-300/30 blur-2xl rounded-full pointer-events-none" />
-        <div className="absolute inset-0 rounded-[42px] bg-green-200/20 blur-3xl scale-110 pointer-events-none" />
+        {/* Glow beneath phone (desktop só) */}
+        <div className="absolute hidden lg:block inset-x-4 -bottom-6 h-20 bg-green-300/30 blur-2xl rounded-full pointer-events-none" />
+        <div className="absolute hidden lg:block inset-0 rounded-[42px] bg-green-200/20 blur-3xl scale-110 pointer-events-none" />
 
         {/* Phone shell */}
         <div className="relative w-full h-full rounded-[42px] bg-gradient-to-b from-[#3a3a3a] via-[#242424] to-[#1a1a1a] p-[1.5px] shadow-[0_40px_80px_rgba(0,0,0,0.28),0_12px_32px_rgba(46,204,113,0.12),inset_0_1px_0_rgba(255,255,255,0.14)]">
@@ -257,16 +257,26 @@ export default function Hero() {
   const phoneY = useTransform(scrollYProgress, [0, 1], [0, -60])
   const textY = useTransform(scrollYProgress, [0, 1], [0, -30])
 
+  // Parallax (ligado ao scroll) só no desktop — no mobile pesa e trava
+  const [isDesktop, setIsDesktop] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)')
+    const update = () => setIsDesktop(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
   return (
     <section ref={ref} id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-white pt-16">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Dot grid */}
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #d1fae5 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.7 }} />
-        {/* Green glow orbs */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-green-100 blur-[160px] rounded-full opacity-70" />
-        <div className="absolute top-1/4 -left-40 w-72 h-72 bg-green-50 blur-[100px] rounded-full" />
-        <div className="absolute top-1/3 right-0 w-64 h-64 bg-emerald-50 blur-[100px] rounded-full" />
+        {/* Green glow orbs (só no desktop — blur grande é pesado no mobile) */}
+        <div className="absolute hidden lg:block bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-green-100 blur-[160px] rounded-full opacity-70" />
+        <div className="absolute hidden lg:block top-1/4 -left-40 w-72 h-72 bg-green-50 blur-[100px] rounded-full" />
+        <div className="absolute hidden lg:block top-1/3 right-0 w-64 h-64 bg-emerald-50 blur-[100px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-16 grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center w-full">
@@ -275,7 +285,7 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate="visible"
-          style={{ y: textY }}
+          style={{ y: isDesktop ? textY : 0 }}
           className="max-w-xl"
         >
           <motion.div variants={item}>
@@ -344,7 +354,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{ y: phoneY }}
+          style={{ y: isDesktop ? phoneY : 0 }}
           className="flex justify-center items-center relative min-h-[480px] lg:min-h-[560px]"
         >
           <PhoneMockup />
